@@ -52,8 +52,7 @@ body{
     top: .5rem;
 }
 .video-container>.video-tip-top>a:last-child{
-    color: #fff;
-    
+   
      display: flex;
      justify-content: center;
      align-items: center;
@@ -379,7 +378,19 @@ ul .level_33 {
       border-radius: .4rem;
 }
 .input-con a{
-    
+    position: absolute;
+    right: 0.05rem;
+    top: 0.05rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+      font-size: .14rem;
+     height: .3rem;
+     color: #fff;
+    padding: 0 0.1rem;
+    border-radius: .3rem;
+     background: -webkit-linear-gradient(to right , #fe426f 0 ,#ff7897 100%);
+   background: linear-gradient(to right , #fe426f 0 ,#ff7897 100%);
 }
 .video-tip-btm-1,.video-tip-btm-3{
     display: flex;
@@ -411,7 +422,8 @@ ul .level_33 {
 
 }
 .video-tip-btm-1>span{
-   
+   padding-left: .02rem;
+    padding-right: .08rem;
 }
 .video-tip-btm-1>p{
      height: .28rem;
