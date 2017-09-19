@@ -10,6 +10,8 @@
     <meta name="description" content="">
 
     <meta name="keywords" content="" />
+    <!--<link href="css/video-js.css" rel="stylesheet">-->
+    <!-- If you'd like to support IE8 -->
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -20,7 +22,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/common.css" />
-
+    <link rel="stylesheet" href="css/h5share.css">
 
 </head>
 
@@ -29,38 +31,143 @@
     <header>
 
     </header>
+    <!--iOS-->
+
+
+    <!--Android-->
+
     <!--播放视频 直播视频-->
     <div class="player-main">
 
         <div class="play-video">
             <div class="video-container">
-                       <video autoplay="" webkit-playsinline="true" x-webkit-airplay="true" playsinline="" width="100%" height="2428.4444444444443"
-            preload="auto" poster="http://image.huajiao.com/895eac42e21975292d6a02c2e957aae4-360_640.jpg" src="blob:http://h.huajiao.com/cad6bb06-cebd-43c5-9f54-90e0169e216b"></video>
-            </div>
-            <div class="video-tip-top">
-                打开全民直播 更多精彩
-            </div>
-            <div class="video-tip-btm">
-                <div></div>
-            </div>
-        </div>
+                <video id="my_video" webkit-playsinline="true" webkit-airplay="true" playsinline="" preload="auto" poster="img/h5share_img_banner.jpg"
+                    data-setup="{}" type="application/x-mpegURL" src="m3u8/index.m3u8">
+                    <source src="m3u8/index.m3u8" type="application/x-mpegURL">
+                </video>
+                <div class="video-tip video-tip-top">
+                    <a href="#" class="video-tip-btm-1">
+                        <p> <img src="img/h5share_img_anchor_logo.png" alt=""> </p>
+                        <div>
+                            <span>lady呱呱</span><span>66666人</span>
+                        </div>
+                    </a>
+                    <a href="#"> 打开全民 关注主播</a>
 
-     
+                </div>
+                <div class="video-tip video-tip-top video-tip-top-2">
+                    <i></i>
+                    <a href="#"> 直播ID:11313123</a>
+
+                </div>
+                <div class="video-tip video-tip-mid">
+                    <!--弹幕-->
+                    <ul>
+                        <li class="type_msg">
+                            <em class="level_info level_1">4</em>
+                            <span class="color_0">Conrad-翠白远思：</span>
+                            <span>[憨笑]撮撮主播小脸蛋，点赞来一波</span>
+                        </li>
+                         <li class="type_msg">
+                            <em class="level_info level_1">4</em>
+                            <span class="color_0">Conrad思：</span>
+                            <span>dsfdfd</span>
+                        </li>
+                         <li class="type_msg">
+                            <em class="level_info level_1">4</em>
+                            <span class="color_0">Con远思：</span>
+                            <span>点赞来一波</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-tip video-tip-btm">
+                    <!--输入框-->
+                    <p class="input-con">
+                        <span> lady呱呱邀请你陪TA聊天</span>
+                        <a href="#"></a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="other-play-video">
+        <p class="title ">
+            <i></i>
+            <span>更多精彩直播</span>
+        </p>
+        <ul class="other-play-video-content clearfloat">
+            <li>
+                <a href="#">
+                        <img src="img/h5share_img_banner_list.jpg" alt="">
+                    </a>
+            </li>
+            <li>
+                <a href="#">
+                        <img src="img/h5share_img_banner_list.jpg" alt="">
+                    </a>
+            </li>
+            <li>
+                <a href="#">
+                        <img src="img/h5share_img_banner_list.jpg" alt="">
+                    </a>
+            </li>
+            <li>
+                <a href="#">
+                        <img src="img/h5share_img_banner_list.jpg" alt="">
+                    </a>
+            </li>
+            <li>
+                <a href="#">
+                        <img src="img/h5share_img_banner_list.jpg" alt="">
+                    </a>
+            </li>
+    </div>
     </div>
 
     <!--底部下载-->
     <footer>
-
+        <div class="footer-con">
+            <div class="footer-con-1">
+                <div class="qrcode-img"><img src="img/h5share_img_qrcode.jpg" alt=""></div>
+                <div class="qrcode-txt">
+                    <p>长按或者扫描二维码</p>
+                    <h4>查看更多精彩</h4>
+                    <a href="#">立即打开</a>
+                </div>
+            </div>
+            <div class="footer-con-2">
+                <img src="img/h5share_img_logo.jpg" alt="">
+            </div>
+        </div>
     </footer>
-<!--d1c9cb-->
+    <!--d1c9cb-->
+    <script src="js/jquery-1.11.3.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/fetch.js"></script>
     <script src="js/bannerList.js"></script>
     <script src="js/browser.min.js"></script>
-
+    <!--<script src="js/video.min.js"></script>
+    <script type="text/javascript">
+        var myPlayer = videojs('my-video');
+        videojs("my-video").ready(function () {
+            var myPlayer = this;
+            myPlayer.play();
+        });
+    </script>-->
 
     <script>
+        var h = document.body.clientHeight
+        //喜欢 点亮红心
+        $(".video-tip-btm").on("click touch", ".video-tip-btm-2", function () {
+            if ($(this).hasClass("actived")) {
+                $(this).removeClass("actived");
+            } else {
+                $(this).addClass("actived");
+            }
+
+        });
     </script>
 </body>
 
