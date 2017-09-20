@@ -10,7 +10,8 @@
     <meta name="description" content="">
 
     <meta name="keywords" content="" />
-    <!--<link href="css/video-js.css" rel="stylesheet">-->
+    <link href="css/video-js.css" rel="stylesheet">
+    <!--<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>-->
     <!-- If you'd like to support IE8 -->
 
     <!--[if lt IE 9]>
@@ -23,7 +24,9 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/h5share.css">
+    <style>
 
+    </style>
 </head>
 
 <body>
@@ -41,64 +44,79 @@
 
         <div class="play-video">
             <div class="video-container">
-                <video id="my_video"  webkit-playsinline="true" webkit-airplay="true"  playsinline="" preload="auto"
-                    poster="img/h5share_img_banner.jpg" data-setup="{}" type="application/x-mpegURL" src="m3u8/index.m3u8">
+                <!--<video id="my_video"  class="video-js vjs-default-skin" webkit-playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" playsinline="" width="100%" preload="auto"  playsinline="" preload="auto"
+        mpegURL" src="m3u8/index.m3u8">
                     <source src="m3u8/index.m3u8" type="application/x-mpegURL">
+                </video>-->
+    
+    <video id="video" width='100%' autoplay poster="http://img.s3.huajiao.com/Object.getPreview/hj-img/MzU5NjYzNDkxNTA1MjA4NjQ5ODg2NTA4NDYwMDQ3LmpwZw==/360/640" width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzU5NjYzNDkxNTA1MjA4NTkwNjQ5MTUxMzEzMzU3MS5tcDQ="playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
+
                 </video>
+                <div class="video-tip-btn">
+                    <div class="video-tip-pause">
+
+                    </div>
+                    <div class="video-tip-waiting">
+
+                    </div>
+                </div>
+                <div class="video-process-bg">
+                    <div class="video-process-line"></div>
+                </div>
                 <div class="video-tip video-tip-top">
                     <i></i>
-                   <a href="#"> 打开全民 更多精彩</a>
+                    <a href="#" class="video-tip-btm-7"> 打开全民 更多精彩</a>
                 </div>
                 <div class="video-tip video-tip-btm">
-                   
-                      <div>
-                            <a href="#" class="video-tip-btm-1">
+
+                    <div>
+                        <a href="#" class="video-tip-btm-1">
                             <p> <img src="img/h5share_img_anchor_logo.png" alt=""> </p>
                             <span>lady呱呱</span>
                         </a>
-                   
-                    <i class="video-tip-btm-2"></i>
-                    <span class="video-tip-btm-3">1.2w</span>
-                      </div>
+
+                        <i class="video-tip-btm-2"></i>
+                        <span class="video-tip-btm-3">1.2w</span>
+                    </div>
                     <a href="#" class="video-tip-btm-4">关注</a>
                 </div>
             </div>
 
         </div>
     </div>
-     <div class="other-play-video">
-            <p class="title ">
-                <i></i>
-                <span>更多精彩小视频</span>
-            </p>
-            <ul class="other-play-video-content clearfloat">
-                <li>
-                    <a href="#">
+    <div class="other-play-video">
+        <p class="title ">
+            <i></i>
+            <span>更多精彩小视频</span>
+        </p>
+        <ul class="other-play-video-content clearfloat">
+            <li>
+                <a href="#">
                         <img src="img/h5share_img_banner_list.jpg" alt="">
                     </a>
-                </li>
-                 <li>
-                    <a href="#">
+            </li>
+            <li>
+                <a href="#">
                         <img src="img/h5share_img_banner_list.jpg" alt="">
                     </a>
-                </li>
-                 <li>
-                    <a href="#">
+            </li>
+            <li>
+                <a href="#">
                         <img src="img/h5share_img_banner_list.jpg" alt="">
                     </a>
-                </li>
-                 <li>
-                    <a href="#">
+            </li>
+            <li>
+                <a href="#">
                         <img src="img/h5share_img_banner_list.jpg" alt="">
                     </a>
-                </li>
-                 <li>
-                    <a href="#">
+            </li>
+            <li>
+                <a href="#">
                         <img src="img/h5share_img_banner_list.jpg" alt="">
                     </a>
-                </li>
-            </div>
-        </div>
+            </li>
+    </div>
+    </div>
 
     <!--底部下载-->
     <footer>
@@ -111,40 +129,128 @@
                     <a href="#">立即打开</a>
                 </div>
             </div>
-              <div class="footer-con-2">
+            <div class="footer-con-2">
                 <img src="img/h5share_img_logo.jpg" alt="">
             </div>
         </div>
     </footer>
     <!--d1c9cb-->
     <script src="js/jquery-1.11.3.js"></script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <!--<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
     <script src="js/jquery.cookie.js"></script>
     <script src="js/fetch.js"></script>
-    <script src="js/bannerList.js"></script>
     <script src="js/browser.min.js"></script>
-    <!--<script src="js/video.min.js"></script>
+    <!--<script src="js/video.min.js"></script>-->
+
     <script type="text/javascript">
-        var myPlayer = videojs('my-video');
-        videojs("my-video").ready(function () {
-            var myPlayer = this;
-            myPlayer.play();
-        });
-    </script>-->
+        // var myPlayer = videojs('my-video');
+        // videojs("my-video").ready(function () {
+        //     var myPlayer = this;
+        //     myPlayer.play();
+        // });
+    </script>
 
     <script>
-        var h = document.body.clientHeight
+        // var h= $(".video-container").css("height").slice(0,-2);
+        //  document.getElementById('video').height=h;
+
+        $(window).load(function () {
+            var video = document.getElementById('video');
+            var h = $(".video-container").css("height").slice(0, -2);
+             var w = $(".video-container").css("width").slice(0, -2);
+            // video.height = h;
+            //  video.width = w;
+         
+            if (video.paused) {
+                $('.video-tip-pause').show();
+               
+            } else {
+                $('.video-tip-pause').hide();
+                $(".video-container").css("height",'90vh')
+            }
+               video.addEventListener("timeupdate", function () {
+                var all_leng = $(".video-process-bg").css("width").slice(0, -2);
+                var now_time = this.currentTime;
+                var now_leng = all_leng / all_time * now_time;
+                if(now_time&&!this.paused){
+                      $('.video-tip-pause').hide();
+                      $(".video-container").css("height",'90vh')
+                }else{
+                      $('.video-tip-pause').show();
+                }
+            });
+            //点击暂停 开始
+            $(".video-tip-btn").click(function () {
+                if (video.paused) {
+                    video.play();
+                      $(".video-container").css("height",'90vh')
+                    $('.video-tip-pause').hide();
+
+                } else {
+                   
+                    video.pause();
+                    $('.video-tip-pause').show();
+                }
+            });
+
+            var all_time = video.duration;
+            video.addEventListener("timeupdate", function () {
+                var all_leng = $(".video-process-bg").css("width").slice(0, -2);
+                var now_time = this.currentTime;
+                var now_leng = all_leng / all_time * now_time;
+                $(".video-process-line").css("width", now_leng + "px")
+            });
+            video.addEventListener("loadedmetadata", function () {
+                video.play();
+            });
+
+        });
+        var ua = navigator.userAgent;
+        document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+
+            if (ua.indexOf("iPhone") > 0) {
+                setTimeout(function () {
+                    $("#video")[0].play();
+
+                }, 3000);
+            } else if (ua.indexOf("Android") > 0) {
+                var vi = $("#video");
+
+                vi[0].play();
+                if (vi[0].currentTime) {
+                    vi[0].pause();
+                    //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
+                    setTimeout(function () {
+                        vi[0].play();
+
+                    }, 3000)
+                }
+            }
+        });
+
         //喜欢 点亮红心
-        $(".video-tip-btm").on("click touch",".video-tip-btm-2",function(){
-            if($(this).hasClass("actived")){
-                 $(this).removeClass("actived");
-            }else{
-                 $(this).addClass("actived");
+        $(".video-tip-btm").on("click touch", ".video-tip-btm-2", function () {
+            if ($(this).hasClass("actived")) {
+                $(this).removeClass("actived");
+            } else {
+                $(this).addClass("actived");
             }
 
         });
       
-        
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            var video = document.getElementById('video');
+            video.play();
+
+        }, false);
+
+        video.addEventListener('timeupdate', function () {
+            //当视频的currentTime大于0.1时表示黑屏时间已过，已有视频画面，可以移除浮层（.pagestart的div元素）
+            if (!video.isPlayed && this.currentTime > 0.1) {
+                $('.pagestart').fadeOut(500);
+                video.isPlayed = !0;
+            }
+        })
     </script>
 </body>
 

@@ -4,25 +4,67 @@
 <title>player</title>
 <link rel="stylesheet" href="./player/mediaelementplayer.css" />
 <style>
-.mejs-controls {
-	display: none !important;
+	html,body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none; 
+  user-select: none;
+  overflow: hidden;
 }
+
+.videobox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+video {width: 1px;display: blcok;}
 </style>
 </head>
 <body>
-<video width="640" height="360" id="player1">
-	<source type="application/x-mpegURL" src="/m3u8/index.m3u8">
-</video>
+<div class="videobox">
+        <video x5-video-player-type="h5" id="mainvideo" webkit-playsinline="true">
+			  <source src="m3u8/index.m3u8" type="application/x-mpegURL">
+		</video>
+</div>
+
+   <p class="img"></p>
 <script src="http://7.url.cn/edu/jslib/jquery/1.9.1/jquery.min.js"></script> 
-<script src="./player/mediaelement-and-player.js"></script>
+
 <script>
-var player = new MediaElementPlayer('#player1', {
-	loop: true,
-	clickToPlayPause: false,
-	success: function (media, ele, player) {
-		player.play();
-	}
-});
+	var video = document.querySelector('#mainvideo');
+  var videobox = document.querySelector('.videobox');
+
+  //播放时改变外层包裹的宽度，使video宽度增加，
+  //相应高度也增加了,播放器控件被挤下去，配合overflow：hidden
+  //控件看不见也触摸不到了
+  var setVideoStyle = function (){
+    videobox.style.width = '120%';
+    videobox.style.left = '-10%';
+    video.style.width = '100%';
+  }
+  window.onload=function () {  
+	  setVideoStyle();
+  }
+  document.addEventListener("WeixinJSBridgeReady", function (){ 
+    video.play();
+    // video.pause();
+}, false);
+	video.pause(function () {  
+		
+	});
+video.addEventListener('timeupdate',function (){
+    //当视频的currentTime大于0.1时表示黑屏时间已过，已有视频画面，可以移除浮层（.pagestart的div元素）
+    if ( !video.isPlayed && this.currentTime>0.1 ){
+        $('.pagestart').fadeOut(500);
+        video.isPlayed = !0;
+    }
+})
 </script>
 </body>
 </html>
