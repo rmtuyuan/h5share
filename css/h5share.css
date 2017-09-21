@@ -65,7 +65,7 @@ body{
 }
 .video-container>.video-tip{
     position: absolute;
-    z-index: 10;
+    z-index: 120;
    
 }
 .video-container>.video-tip-top{
@@ -625,6 +625,7 @@ ul .level_33 {
     background: #ccc;
     position: absolute;
     bottom: 0;
+    -webkit-tap-highlight-color:rgba(255,0,0,0);
 }
 .video-process-line{
     width: 0;

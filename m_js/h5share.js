@@ -1,4 +1,58 @@
+(function ($) {
+    //获取url参数的封装函数
+    //decodeURI() 和 decodeURIComponent()
+    $.getUrlParam = function (name) {
+        var reg = new RegExp("(^|&|#)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return decodeURIComponent(r[2]);
+        }
+        return null;
+    }
+    $.mygetUrlParam = function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+
+        var r = window.location.hash.substr(1).match(reg);
+        if (r != null) {
+            return decodeURIComponent(r[2]);
+        }
+        return null;
+    }
+})(jQuery);
+
+// 获取信息 ajax  fetch
+
+
+
+
+
+
 $(window).load(function () {
+    var server = 'http://139.199.23.160:8080/qmzb';
+    var uid = $.getUrlParam("uid");
+    if (uid) {
+    //     var form = new FormData();
+    //     form.append("uid", uid); // 
+
+    //     fetch(server + "/user/my_info", {
+    //         method: 'POST',
+    // //         headers: { 'Accept': 'application/json',
+    // // 'Content-Type': 'application/json'},
+    //         mode: 'cors',
+    //         cache: 'default',
+    //         body: form
+    //     }).then((response) => response.json()).then(function (data) {
+    //         //console.log(data);
+    //         if (data.code == 200) {
+    //             console.log(data);
+    //         }
+    //     });
+    } else {
+       // alert('页面丢失')
+    }
+
+
+
     var video = document.getElementById('video');
     var h = $(".video-container").css("height").slice(0, -2);
     var w = $(".video-container").css("width").slice(0, -2);
@@ -90,3 +144,15 @@ video.addEventListener('timeupdate', function () {
 });
 
 
+//点击视频上 的其他东西 提示要下载 
+$(".video-tip-").on("click touch", "a", function (e) {
+    e.preventDefault();
+});
+$(".video-container").on("click touch", "div", function () {
+    if ($(this).hasClass("video-tip")) {
+        alert("请下载app");
+        //window.location.href='下载app的链接 ';
+
+
+    }
+});
