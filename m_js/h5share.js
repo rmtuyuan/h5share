@@ -17,7 +17,6 @@ $(window).load(function () {
 
         var now_time = this.currentTime;
 
-        $(".video-process-line").css("width", now_leng + "px");
         if (now_time && !this.paused) {
             $('.video-tip-pause').hide();
             $(".video-container").css("height", '90vh')
@@ -89,3 +88,5 @@ video.addEventListener('timeupdate', function () {
         video.isPlayed = !0;
     }
 });
+
+

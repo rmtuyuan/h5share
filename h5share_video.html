@@ -10,7 +10,7 @@
     <meta name="description" content="">
 
     <meta name="keywords" content="" />
-    <link href="css/video-js.css" rel="stylesheet">
+    <!--<link href="css/video-js.css" rel="stylesheet">-->
     <!--<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>-->
     <!-- If you'd like to support IE8 -->
 
@@ -48,10 +48,12 @@
         mpegURL" src="m3u8/index.m3u8">
                     <source src="m3u8/index.m3u8" type="application/x-mpegURL">
                 </video>-->
-    
-    <video id="video" width='100%' autoplay poster="http://img.s3.huajiao.com/Object.getPreview/hj-img/MzU5NjYzNDkxNTA1MjA4NjQ5ODg2NTA4NDYwMDQ3LmpwZw==/360/640" width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzU5NjYzNDkxNTA1MjA4NTkwNjQ5MTUxMzEzMzU3MS5tcDQ="playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
+                <div class="video-box">
+                     <video id="video" width='100%' autoplay  width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzU5NjYzNDkxNTA1MjA4NTkwNjQ5MTUxMzEzMzU3MS5tcDQ="playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
 
                 </video>
+                </div>
+   
                 <div class="video-tip-btn">
                     <div class="video-tip-pause">
 
@@ -140,117 +142,24 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/fetch.js"></script>
     <script src="js/browser.min.js"></script>
-    <!--<script src="js/video.min.js"></script>-->
-
-    <script type="text/javascript">
-        // var myPlayer = videojs('my-video');
-        // videojs("my-video").ready(function () {
-        //     var myPlayer = this;
-        //     myPlayer.play();
-        // });
-    </script>
-
+    <script src="m_js/h5share.js"></script>
     <script>
-        // var h= $(".video-container").css("height").slice(0,-2);
-        //  document.getElementById('video').height=h;
+        
 
-        $(window).load(function () {
-            var video = document.getElementById('video');
-            var h = $(".video-container").css("height").slice(0, -2);
-             var w = $(".video-container").css("width").slice(0, -2);
-            // video.height = h;
-            //  video.width = w;
-         
-            if (video.paused) {
-                $('.video-tip-pause').show();
+      $(function () {  
+            
+             video.addEventListener("timeupdate", function () {
+                 var all_time = video.duration;
                
-            } else {
-                $('.video-tip-pause').hide();
-                $(".video-container").css("height",'90vh')
-            }
-               video.addEventListener("timeupdate", function () {
                 var all_leng = $(".video-process-bg").css("width").slice(0, -2);
                 var now_time = this.currentTime;
+                //    alert( now_time);
                 var now_leng = all_leng / all_time * now_time;
-                if(now_time&&!this.paused){
-                      $('.video-tip-pause').hide();
-                      $(".video-container").css("height",'90vh')
-                }else{
-                      $('.video-tip-pause').show();
-                }
+                $(".video-process-line").css("width", now_leng + "px");
+              
             });
-            //点击暂停 开始
-            $(".video-tip-btn").click(function () {
-                if (video.paused) {
-                    video.play();
-                      $(".video-container").css("height",'90vh')
-                    $('.video-tip-pause').hide();
-
-                } else {
-                   
-                    video.pause();
-                    $('.video-tip-pause').show();
-                }
-            });
-
-            var all_time = video.duration;
-            video.addEventListener("timeupdate", function () {
-                var all_leng = $(".video-process-bg").css("width").slice(0, -2);
-                var now_time = this.currentTime;
-                var now_leng = all_leng / all_time * now_time;
-                $(".video-process-line").css("width", now_leng + "px")
-            });
-            video.addEventListener("loadedmetadata", function () {
-                video.play();
-            });
-
-        });
-        var ua = navigator.userAgent;
-        document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
-
-            if (ua.indexOf("iPhone") > 0) {
-                setTimeout(function () {
-                    $("#video")[0].play();
-
-                }, 3000);
-            } else if (ua.indexOf("Android") > 0) {
-                var vi = $("#video");
-
-                vi[0].play();
-                if (vi[0].currentTime) {
-                    vi[0].pause();
-                    //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
-                    setTimeout(function () {
-                        vi[0].play();
-
-                    }, 3000)
-                }
-            }
-        });
-
-        //喜欢 点亮红心
-        $(".video-tip-btm").on("click touch", ".video-tip-btm-2", function () {
-            if ($(this).hasClass("actived")) {
-                $(this).removeClass("actived");
-            } else {
-                $(this).addClass("actived");
-            }
-
-        });
-      
-        document.addEventListener("WeixinJSBridgeReady", function () {
-            var video = document.getElementById('video');
-            video.play();
-
-        }, false);
-
-        video.addEventListener('timeupdate', function () {
-            //当视频的currentTime大于0.1时表示黑屏时间已过，已有视频画面，可以移除浮层（.pagestart的div元素）
-            if (!video.isPlayed && this.currentTime > 0.1) {
-                $('.pagestart').fadeOut(500);
-                video.isPlayed = !0;
-            }
-        })
+      })
+       
     </script>
 </body>
 
