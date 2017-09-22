@@ -29,7 +29,9 @@
 <body>
     <!--头部 导航栏-->
     <header>
-
+        <div style="display:none;"> 
+            <img src="img/da2e814d579585e67fcc1fdd6ffe488e-320_320-200_200.jpg" alt="">
+        </div>
     </header>
     <!--iOS-->
 
@@ -43,15 +45,14 @@
             <div class="video-container">
 
                 <div class="video-box" style="background: url('http://img.s3.huajiao.com/Object.getPreview/hj-img/MzMzMDM0ODMxNTA1MDI2MjMzMDUzMjE0MzE5NzUzOTE1MDUwMjYyMzI5MzV2aWRlb2NvdmVyLmpwZw==/360/640') no-repeat;  background-size: 100% 100%;">
-                    <video id="video" width='100%' autoplay poster="" width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzMzMDM0ODMxNTA1MDI2MjE0MTE5NDEwMjQ0Nzc1dG9mZmVlXzE1MDUwMjYyMTIxNDMubXA0"
-                        playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true"
-                        x5-video-orientation="portraint" >
+                    <video id="video" width='100%' autoplay poster="" width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzMzMDM0ODMxNTA1MDI2MjE0MTE5NDEwMjQ0Nzc1dG9mZmVlXzE1MDUwMjYyMTIxNDMubXA0" playsinline="true"
+                        x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
 
                     </video>
                 </div>
 
                 <!--x5-video-player-fullscreen="true"               
-  x5-video-orientation="portraint"-->
+                 x5-video-orientation="portraint"-->
                 <div class="video-tip-btn">
                     <div class="video-tip-pause">
 
@@ -62,9 +63,9 @@
                 </div>
                 <div class="video-tip video-tip-top">
                     <a href="#" class="video-tip-btm-1">
-                        <p> <img src="img/h5share_img_anchor_logo.png" alt=""> </p>
+                        <p> <img class="nick_logo" src="" alt=""> </p>
                         <div>
-                            <span>lady呱呱</span><span>66666人</span>
+                            <span class="nick_name">lady呱呱</span><span class="room_user_count">6666人</span>
                         </div>
                     </a>
                     <a href="#"> 打开全民 关注主播</a>
@@ -72,7 +73,7 @@
                 </div>
                 <div class="video-tip video-tip-top video-tip-top-2">
                     <i></i>
-                    <a href="#"> 直播ID:11313123</a>
+                    <a href="#" class="nick_number"> 直播ID 122233</a>
 
                 </div>
                 <div class="video-tip video-tip-mid">
@@ -98,13 +99,17 @@
                 <div class="video-tip video-tip-btm">
                     <!--输入框-->
                     <p class="input-con">
-                        <span> lady呱呱邀请你陪TA聊天</span>
+                        <span> <b class="nick_name" style="font-weight:500;">lady呱呱</b>邀请你陪TA聊天</span>
                         <a href="#">接受</a>
                     </p>
                 </div>
             </div>
-
+            <div class="erro-img">
+                <!--<img src="img/err-d4bcf8ad0d.png" alt="">-->
+            </div>
         </div>
+        <!--页面丢失时候显示的-->
+
     </div>
     <div class="other-play-video">
         <p class="title ">
@@ -133,9 +138,9 @@
                     </a>
             </li>
             <li>
-                <a href="#">
-                        <img src="img/h5share_img_banner_list.jpg" alt="">
-                    </a>
+
+
+
             </li>
     </div>
     </div>
@@ -156,45 +161,103 @@
             </div>
         </div>
     </footer>
-    <!--d1c9cb-->
+
     <script src="js/jquery-1.11.3.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <script src="js/jquery.cookie.js"></script>
     <script src="js/fetch.js"></script>
-    <script src="js/bannerList.js"></script>
     <script src="js/browser.min.js"></script>
-
     <script src="m_js/h5share.js"></script>
 
     <script>
         //websocket
-          var wsServer = 'ws://localhost:8888/Demo';
-        var socket = new WebSocket(wsServer);
-        
-
-        // 打开Socket 
-        socket.onopen = function (event) {
-           
-            // 发送一个初始化消息
-            socket.send('I am the client and I\'m listening!');
-
-            // 监听消息
-            socket.onmessage = function (event) {
-                console.log('Client received a message', event);
-                //监听 服务器端消息 添加 html 代码 片段
-            };
-
-            // 监听Socket的关闭
-            socket.onclose = function (event) {
-                console.log('Client notified socket has closed', event);
-            };
-
-            // 关闭Socket.... 
-            //socket.close() 
-        };
+        //   var wsServer = '';
+        // var socket = new WebSocket(wsServer);
 
 
-      
+        // // 打开Socket 
+        // socket.onopen = function (event) {
+
+        //     // 发送一个初始化消息
+        //     socket.send('I am the client and I\'m listening!');
+
+        //     // 监听消息
+        //     socket.onmessage = function (event) {
+        //         console.log('Client received a message', event);
+        //         //监听 服务器端消息 添加 html 代码 片段
+        //     };
+
+        //     // 监听Socket的关闭
+        //     socket.onclose = function (event) {
+        //         console.log('Client notified socket has closed', event);
+        //     };
+
+        //     // 关闭Socket.... 
+        //     //socket.close() 
+        // };
+
+
+/*
+        $(function () {
+            //更新数据
+            var server = 'http://139.199.23.160:8080/qmzb';
+            var uid = $.getUrlParam("liveid");
+
+            if (uid) {
+                var form = new FormData();
+                form.append("login_uid", uid); // 
+
+                fetch(server + "/public/my_info", {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'default',
+                    body: form
+                }).then((response) => response.json()).then(function (data) {
+
+                    if (data.code == 200) {
+                        //请求成功  判断data.data 不为空
+                        if (data.data.length != 0) {
+                            //有数据
+                            // 加载数据 
+
+                            $(".video-box").css("background", "url(" + data.data.icon + ") no-repeat").css(
+                                "background-size", "100% 100%")
+                            $(".nick_logo").attr("src", data.data.user_picture);
+                            $(".nick_name").html(data.data.nick_name);
+                            $(".nick_number").html("直播ID" + data.data.number);
+                            $(".room_user_count").html(data.data.room_user_count + "人");
+                            $(".video-box>video").attr("src", data.data.hls_pull_url);
+                            var fram = document.createDocumentFragment();
+
+
+                            if (data.data.room_list.length) {
+                                for (var i = 0; i < data.data.room_list.length; i++) {
+                                    var element = data.data.room_list[i];
+                                    var li = document.createElement("li");
+                                    li.innerHTML = ' <a href="h5share_live.html?liveid=' + element.uid +
+                                        '"><img src="' + element.ico + '" alt=""></a>';
+                                    fram.appendChild(li);
+                                }
+                            }
+
+                            //  $(".other-play-video-content").append(fram);
+
+                            $(".video-container").show();
+
+
+                        } else {
+                            //没有数据
+                            // $(".erro-img").show().siblings(".video-container").hide();
+                        }
+                    } else {
+                        //$(".erro-img").show().siblings(".video-container").hide();
+                    }
+                });
+            } else {
+                // alert('页面丢失');
+                //$(".erro-img").show().siblings(".video-container").hide();
+            }
+            //弹幕  到 15个删除第一个
+        });*/
     </script>
 </body>
 
