@@ -120,14 +120,14 @@ document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
 });
 
 //喜欢 点亮红心
-$(".video-tip-btm").on("click touch", ".video-tip-btm-2", function () {
-    if ($(this).hasClass("actived")) {
-        $(this).removeClass("actived");
-    } else {
-        $(this).addClass("actived");
-    }
+// $(".video-tip-btm").on("click touch", ".video-tip-btm-2", function () {
+//     if ($(this).hasClass("actived")) {
+//         $(this).removeClass("actived");
+//     } else {
+//         $(this).addClass("actived");
+//     }
 
-});
+// });
 
 document.addEventListener("WeixinJSBridgeReady", function () {
     var video = document.getElementById('video');

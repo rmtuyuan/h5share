@@ -43,17 +43,19 @@
     <div class="player-main">
 
         <div class="play-video">
-            <div class="video-container">
+            <div class="video-container" style="display:block"> 
                 <!--<video id="my_video"  class="video-js vjs-default-skin" webkit-playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" playsinline="" width="100%" preload="auto"  playsinline="" preload="auto"
-        mpegURL" src="m3u8/index.m3u8">
+                    mpegURL" src="m3u8/index.m3u8">
                     <source src="m3u8/index.m3u8" type="application/x-mpegURL">
                 </video>-->
-                <div class="video-box">
-                     <video id="video" width='100%' autoplay  width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzU5NjYzNDkxNTA1MjA4NTkwNjQ5MTUxMzEzMzU3MS5tcDQ="playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
+                <div class="video-box" style="background: url('http://img.s3.huajiao.com/Object.getPreview/hj-img/MzU5NjYzNDkxNTA1MjA4NjQ5ODg2NTA4NDYwMDQ3LmpwZw==/360/640') no-repeat;  background-size: 100% 100%;">
+                    <video id="video" width='100%' autoplay width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzU5NjYzNDkxNTA1MjA4NTkwNjQ5MTUxMzEzMzU3MS5tcDQ="
+                        playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true"
+                        x5-video-orientation="portraint">
 
-                </video>
+                    </video>
                 </div>
-   
+
                 <div class="video-tip-btn">
                     <div class="video-tip-pause">
 
@@ -83,8 +85,11 @@
                     <a href="#" class="video-tip-btm-4">关注</a>
                 </div>
             </div>
-
+            <div class="erro-img">
+                <!--<img src="img/err-d4bcf8ad0d.png" alt="">-->
+            </div>
         </div>
+          
     </div>
     <div class="other-play-video">
         <p class="title ">
@@ -144,22 +149,19 @@
     <script src="js/browser.min.js"></script>
     <script src="m_js/h5share.js"></script>
     <script>
-        
+        $(function () {
 
-      $(function () {  
-            
-             video.addEventListener("timeupdate", function () {
-                 var all_time = video.duration;
-               
+            video.addEventListener("timeupdate", function () {
+                var all_time = video.duration;
+
                 var all_leng = $(".video-process-bg").css("width").slice(0, -2);
                 var now_time = this.currentTime;
                 //    alert( now_time);
                 var now_leng = all_leng / all_time * now_time;
                 $(".video-process-line").css("width", now_leng + "px");
-              
+
             });
-      })
-       
+        })
     </script>
 </body>
 
