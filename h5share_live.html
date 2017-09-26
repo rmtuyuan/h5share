@@ -34,7 +34,7 @@
         </div>
     </header>
     <!--iOS-->
-
+    
 
     <!--Android-->
 
@@ -45,7 +45,8 @@
             <div class="video-container" style="display:block">
 
                 <div class="video-box" style="background: url('http://img.s3.huajiao.com/Object.getPreview/hj-img/MzMzMDM0ODMxNTA1MDI2MjMzMDUzMjE0MzE5NzUzOTE1MDUwMjYyMzI5MzV2aWRlb2NvdmVyLmpwZw==/360/640') no-repeat;  background-size: 100% 100%;">
-                    <video id="video" width='100%' autoplay poster="" width='100%' preload="auto" webkit-playsinline="true" src="http://static.s3.huajiao.com/Object.access/hj-video/MzMzMDM0ODMxNTA1MDI2MjE0MTE5NDEwMjQ0Nzc1dG9mZmVlXzE1MDUwMjYyMTIxNDMubXA0" playsinline="true"
+                    <video id="video" width='100%' autoplay poster="" width='100%' preload="auto" webkit-playsinline="true" src="http://pullhls3f1d1ad9.live.126.net/live/3468879aefc74c41a8995768bf131980/playlist.m3u8 
+" playsinline="true"
                         x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
 
                     </video>
@@ -200,7 +201,7 @@
         
 
 
-/*
+
         $(function () {
             //更新数据
 
@@ -209,6 +210,7 @@
             var uid = $.getUrlParam("liveid");
 
             if (uid) {
+                //判断uid
                 var form = new FormData();
                 form.append("login_uid", uid); // 
 
@@ -224,9 +226,8 @@
                         if (data.data.length != 0) {
                             //有数据
                             // 加载数据 
-
                             $(".video-box").css("background", "url(" + data.data.icon + ") no-repeat").css(
-                                "background-size", "100% 100%")
+                                "background-size", "100% 100%");
                             $(".nick_logo").attr("src", data.data.user_picture);
                             $(".nick_name").html(data.data.nick_name);
                             $(".nick_number").html("直播ID" + data.data.number);
@@ -252,18 +253,18 @@
 
                         } else {
                             //没有数据
-                            // $(".erro-img").show().siblings(".video-container").hide();
+                             $(".erro-img").show().siblings(".video-container").hide();
                         }
                     } else {
-                        //$(".erro-img").show().siblings(".video-container").hide();
+                        $(".erro-img").show().siblings(".video-container").hide();
                     }
                 });
             } else {
                 // alert('页面丢失');
-                //$(".erro-img").show().siblings(".video-container").hide();
+                $(".erro-img").show().siblings(".video-container").hide();
             }
             //弹幕  到 15个删除第一个
-        });*/
+        });
     </script>
 </body>
 

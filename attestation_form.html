@@ -59,7 +59,7 @@
                         <div class="container">
                             <div class="atte-form-con-col">
                                 <p>真实姓名</p>
-                                <input type="text"  name="" placeholder="请输入真实姓名" value="">
+                                <input type="text" class="erroed"  name="real_name" placeholder="请输入真实姓名" value="">
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <div class="container">
                             <div class="atte-form-con-col">
                                 <p>性别</p>
-                                <input type="text" name=""   placeholder="请输入男/女" value="">
+                                <input type="text" name="gender" class="erroed"   placeholder="请输入男/女" value="">
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <div class="container">
                             <div class="atte-form-con-col">
                                 <p>年龄</p>
-                                <input type="number" min="0"   name="" placeholder="请输入年龄" value="">
+                                <input type="number" min="0" class="erroed"  name="age" placeholder="请输入年龄" value="">
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         <div class="container">
                             <div class="atte-form-con-col">
                                 <p>身份证号</p>
-                                <input type="text" maxlength="18"   name="" placeholder="请输入身份证号" value="">
+                                <input type="text" maxlength="18" class="erroed"  name="id_card" placeholder="请输入身份证号" value="">
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                         <div class="container">
                             <div class="atte-form-con-col">
                                 <p>手机号</p>
-                                <input id="login_phone"   type="number" min="0" name="" placeholder="请输入手机号" value="">
+                                <input id="login_phone" class="erroed"   type="number" min="0" name="" placeholder="请输入手机号" value="">
                             </div>
                         </div>
                     </div>
@@ -116,14 +116,14 @@
                         <div class="container">
                             <div class="atte-form-con-col betten">
                                 <p>验证码</p>
-                                <input type="text" name=""   placeholder="请输入验证码" value="">
+                                <input type="text" name=""   class="erroed" placeholder="请输入验证码" value="">
                                 <a href="#" class="font-fa text">  <span class="text-color-fe">获取验证码</span> </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="atte-form-btn-box">
-                    <a href="attestation_after.html" id="all_submit_btn">提交</a>
+                    <a href="#" id="all_submit_btn">提交</a>
                 </div>
             </div>
             <!--上传图片-->
@@ -150,7 +150,7 @@
                                 </p>
                                 <div class="img-box-btn">
                                     <p style="display:none;"  class="not-upload-info" >身份证正面照片</p>
-                                    <input type="file" >
+                                    <input type="file"  name="pic_id_front" class="erroed">
                                     上传图片
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
                                 </p>
                                 <div class="img-box-btn">
                                       <p style="display:none;"  class="not-upload-info"> 身份证国徽面照片</p>
-                                    <input type="file" >
+                                    <input type="file" name="pic_id_back" class="erroed" >
                                     上传图片
                                 </div>
                             </div>
@@ -203,7 +203,7 @@
     
     <script src="js/fetch.js"></script>
     <script src="js/browser.min.js"></script>
-
+    <script src="m_js/attestation.js"></script>
     <script>
         $(".slide-upload-box").click(function (e) {  
             e.preventDefault();
@@ -220,7 +220,7 @@
             }
         });
     </script>
-    <script src="m_js/attestation.js"></script>
+    <script src="m_js/atte_form.js"></script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@ body{
 }
 
 .play-video{
-     /*height: 50vh;*/
+  height:90vh;
       width: 100vw;
        overflow: hidden;
       
@@ -647,7 +647,7 @@ ul .level_33 {
     bottom: 0;
     right: 0;
     background: url("../img/err-d4bcf8ad0d.png") no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 90%;
     display: none;
     z-index: 160;
 }
